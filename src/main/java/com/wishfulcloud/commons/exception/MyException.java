@@ -13,7 +13,7 @@ import com.wishfulcloud.commons.model.ResponseResult;
 public class MyException extends RuntimeException{
 
 	/**
-	 * 
+	 * 序列化
 	 */
 	private static final long serialVersionUID = 1L;
 	
