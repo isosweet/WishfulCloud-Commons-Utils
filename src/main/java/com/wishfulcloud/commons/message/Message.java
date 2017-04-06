@@ -19,7 +19,7 @@ public abstract class Message {
 	static{
 		messageMap.put("404", new ResponseResult(true, "404", "未找到对应的访问资源"));
 		messageMap.put("500", new ResponseResult(true, "500", "系统异常"));
-		
+		messageMap.put("1", new ResponseResult(false, "1", "成功"));
 	}
 	
 	public static ResponseResult buildResponseResult(String code){
@@ -47,4 +47,28 @@ public abstract class Message {
 	public static ResponseResult buildResponseResult(Boolean hasErrors, String code, Object message, Object data){
 		return new ResponseResult(hasErrors, code, message, data);
 	}
+	
+	/**
+	 * 操作成功/保存成功/删除成功 等。。。
+	 * 
+	 * @return
+	 */
+	public static ResponseResult buildResponseResultSuccess(){
+		return new ResponseResult(false, "1", "成功");
+	}
+	
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
+	public static ResponseResult buildResponseResultSuccess(Object data){
+		return new ResponseResult(false, "1", "成功", data);
+	}	
+	
+	public static ResponseResult buildResponseResultFail(){
+		return new ResponseResult(true, "-1", "失败");
+	}
+	
+	
 }
